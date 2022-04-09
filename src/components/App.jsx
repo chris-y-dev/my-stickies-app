@@ -16,12 +16,11 @@ function App() {
   function retrieveData(){
     fetch("/note").then(res => {
       if(res){
-        return res.text()
+        return res.json()
       }
     }).then(jsonRes => setNoteArray(jsonRes));
   }
   //old linl: http://localhost:4000/note
-  //res.json -> res.text
 
   useEffect(retrieveData, []);
 

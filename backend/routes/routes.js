@@ -12,12 +12,13 @@ router.post('/note', (req, res) => {
     })
     newNote.save()
     .then(data => {
-        res.json(data)
+        res.text(data)
     })
     .catch(err => {
         res.json(err)
     })
 })
+//res.json(data) -> res.text(data)
 
 router.get('/note', (req, res) => {
     Note.find((err, note) => {
