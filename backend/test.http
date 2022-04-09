@@ -1,0 +1,8 @@
+POST http://localhost:4000/note
+Content-Type: application/json
+
+{
+    "title":"test Number 1",
+    "content":"Paragraph here",
+    "color":"yellownote"
+}

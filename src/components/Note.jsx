@@ -1,19 +1,22 @@
 import React from "react";
+import axios from "axios";
 
 function Note(props) {
 
   //Handle the click on delete button
-  function handleClick(){
-    props.onDelete(props.id) //triggers function passed over from App
+  function handleClick(event){
+    props.onDelete(
+      {keyId: props.keyId,
+        objId: event.target.value}); //triggers function passed over from App
   }
 
   return (
-    <div className="note">
+    <div className="note" id={props.color}>
       <h1>{props.title}</h1>
       <p>{props.content}</p>
-      <button onClick={handleClick}>X</button> 
+      <button onClick={handleClick} value={props.ObjId}>X</button> 
     </div>
-  );
+  )
 }
 
 export default Note;
