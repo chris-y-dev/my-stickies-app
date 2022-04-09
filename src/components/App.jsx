@@ -14,7 +14,7 @@ function App() {
   const [noteArray, setNoteArray] = useState([]);
 
   function retrieveData(){
-    fetch("/").then(res => {
+    fetch("/note").then(res => {
       if(res){
         return res.json()
       }
@@ -38,7 +38,7 @@ function App() {
 
     const {keyId, objId} = ids
     // console.log(id);
-    axios.delete(`/${objId}`)
+    axios.delete(`/note/${objId}`)
    .then(res => console.log(res.data));
    //old link http://localhost:4000/
 
