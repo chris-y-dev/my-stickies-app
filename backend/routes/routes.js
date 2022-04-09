@@ -4,7 +4,7 @@ const { default: mongoose } = require('mongoose');
 const router = express.Router();
 const Note = require('../models/models');
 
-router.post('/note', (req, res) => {
+router.post('/', (req, res) => {
     const newNote = new Note ({
         title: req.body.title,
         content: req.body.content,
@@ -19,7 +19,7 @@ router.post('/note', (req, res) => {
     })
 })
 
-router.get('/note', (req, res) => {
+router.get('/', (req, res) => {
     Note.find((err, note) => {
         if (err) {
             console.log(err);
@@ -41,7 +41,7 @@ router.get('/note', (req, res) => {
 //     })
 // })
 
-router.delete('/note/:id', (req,res)=>{
+router.delete('/:id', (req,res)=>{
     Note.findByIdAndDelete(req.params.id)
     .then(notesarray => res.json('item deleted'))
     .catch(err => res.status(400).json('Error: '+ err))

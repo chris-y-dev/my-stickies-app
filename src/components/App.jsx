@@ -14,13 +14,13 @@ function App() {
   const [noteArray, setNoteArray] = useState([]);
 
   function retrieveData(){
-    fetch("/note").then(res => {
+    fetch("/").then(res => {
       if(res){
         return res.json()
       }
     }).then(jsonRes => setNoteArray(jsonRes));
   }
-  //old linl: http://localhost:4000
+  //old linl: http://localhost:4000/note
 
   useEffect(retrieveData, []);
 
@@ -38,7 +38,7 @@ function App() {
 
     const {keyId, objId} = ids
     // console.log(id);
-    axios.delete(`/note/${objId}`)
+    axios.delete(`/${objId}`)
    .then(res => console.log(res.data));
    //old link http://localhost:4000/
 
