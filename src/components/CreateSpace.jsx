@@ -32,7 +32,7 @@ function submitNote(event){
   setInputText({
     title:"",
     content: "",
-    color: "grey",
+    color: "",
   }); 
 
  

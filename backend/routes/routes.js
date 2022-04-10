@@ -18,7 +18,6 @@ router.post('/note', (req, res) => {
         res.json(err)
     })
 })
-//res.json(data) -> res.text(data)
 
 router.get('/note', (req, res) => {
     Note.find((err, note) => {
@@ -29,7 +28,6 @@ router.get('/note', (req, res) => {
         }
     })
 })
-//res.json(note) -> res.text
 
 // router.post('/delete', (req,res)=>{
 //     console.log(req.body.id);

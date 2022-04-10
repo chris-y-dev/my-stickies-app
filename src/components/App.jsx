@@ -14,10 +14,11 @@ function App() {
   const [noteArray, setNoteArray] = useState([]);
 
   function retrieveData(){
-    fetch("http://localhost:4000/note").then(res => res.json())
+    fetch("http://localhost:4000/note")
+    .then(res => res.json())
     .then(jsonRes => setNoteArray(jsonRes));
   }
-  //old lin;: http://localhost:4000/note
+
 // changed .then function
   useEffect(retrieveData, []);
 
