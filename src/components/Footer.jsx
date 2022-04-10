@@ -7,7 +7,7 @@ function Footer() {
     <footer>
       <p>Created by Chris Yuen {year}</p>
       <p>Social Media: <a href="https://www.linkedin.com/in/chrisyuen976">LinkedIn</a></p>
-    <p class="footer-small">Technologies used: React, JavaScript, Node.js, MongoDB</p>
+      <p className="footer-small">Technologies used: React, JavaScript, Node.js, MongoDB</p>
     </footer>
   );
 }
