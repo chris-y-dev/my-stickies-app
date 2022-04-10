@@ -12,7 +12,7 @@ router.post('/note', (req, res) => {
     })
     newNote.save()
     .then(data => {
-        res.text(data)
+        res.json(data)
     })
     .catch(err => {
         res.json(err)
@@ -29,6 +29,7 @@ router.get('/note', (req, res) => {
         }
     })
 })
+//res.json(note) -> res.text
 
 // router.post('/delete', (req,res)=>{
 //     console.log(req.body.id);
