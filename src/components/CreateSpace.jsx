@@ -28,9 +28,10 @@ function submitNote(event){
   props.onAdd(inputText) //calling onAdd === calling addNote function from App.jsx
 
    //submit data to backend
-   axios.post('https://stickies-wall-by-chris.herokuapp.com/note', inputText)
+   axios.post('/note', inputText)
    .then(res => console.log(res.data));
    //old link http://localhost:4000
+   //https://stickies-wall-by-chris.herokuapp.com/
   
   //reset Input Space after submitting note
   setInputText({
