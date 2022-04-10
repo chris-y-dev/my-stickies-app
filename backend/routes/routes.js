@@ -19,7 +19,7 @@ router.post('/note', (req, res) => {
     })
 })
 
-router.get('/note', (req, res) => {
+router.get('*', (req, res) => {
     Note.find((err, note) => {
         if (err) {
             console.log(err);
@@ -27,7 +27,7 @@ router.get('/note', (req, res) => {
             res.json(note)
         }
     })
-})
+}) //changed /note to *
 
 // router.post('/delete', (req,res)=>{
 //     console.log(req.body.id);
