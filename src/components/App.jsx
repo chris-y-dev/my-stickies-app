@@ -15,7 +15,7 @@ function App() {
   const [noteArray, setNoteArray] = useState([]);
 
   function retrieveData(){
-    fetch("https://stickies-wall-by-chris.herokuapp.com/note")
+    fetch("/note")
     .then(res => res.json())
     .then(jsonRes => setNoteArray(jsonRes));
   }
@@ -39,7 +39,7 @@ function App() {
 
     const {keyId, objId} = ids
     // console.log(id);
-    axios.delete('https://stickies-wall-by-chris.herokuapp.com/note/' + objId)
+    axios.delete('/note/' + objId)
    .then(res => console.log(res.data));
    //http://localhost:4000/note
    //https://stickies-wall-by-chris.herokuapp.com
