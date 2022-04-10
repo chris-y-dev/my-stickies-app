@@ -15,7 +15,7 @@ function App() {
 
   function retrieveData(){
     fetch("/note")
-    .then(res => res.text())
+    .then(res => res.json())
     .then(jsonRes => setNoteArray(jsonRes));
   }
   //http://localhost:4000/note
