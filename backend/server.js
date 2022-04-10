@@ -14,19 +14,21 @@ mongoose.connect(process.env.ATLAS_URI, { useUnifiedTopology: true, useNewUrlPar
     .then(console.log('MongoDB database connected successfully'))
 
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('public'));
-    app.use(express.static('src'));
-    app.use(express.static('backend'));
-    app.get('*', (req,res)=>{
-        req.sendFile(path.resolve(__dirname, 'public', 'index.html'))
-    })
-}
 
 
 app.use(express.json())
 app.use(cors());
 app.use('/', routesURL)
+
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('public'));
+    app.use(express.static('src'));
+    app.use(express.static('backend'));
+    app.get('/*', (req,res)=>{
+        req.sendFile(path.resolve(__dirname, 'src', 'index.js'))
+    })
+}
 
 app.listen(port, function(){
     console.log(`server is running on port: ${port}`);
