@@ -42,11 +42,11 @@ function App() {
 
    //for local Array
   //Call previous Array and filter according to ID passed over
-   setNoteArray(prevArray => {        
-    return prevArray.filter(function(noteItem, index){
-      return index !== keyId
-      })  
-  });
+  //  setNoteArray(prevArray => {        
+  //   return prevArray.filter(function(noteItem, index){
+  //     return index !== keyId
+  //     })  
+  // });
 
   //Reset Database array
   setNoteArray(prevArray => {
