@@ -1,6 +1,7 @@
 // Author: Chris Yuen
 // App: My Sticky Note App
 // Created: April 2022
+//
 
 import React, {useEffect, useState} from "react";
 import Header from "./Header";
