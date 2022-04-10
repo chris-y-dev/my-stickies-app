@@ -10,6 +10,9 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 4000;
 
+mongoose.connect(process.env.ATLAS_URI, { useUnifiedTopology: true, useNewUrlParser: true })
+    .then(console.log('MongoDB database connected successfully'))
+
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('public'));
     app.get('*', (req,res)=>{
@@ -17,8 +20,7 @@ if (process.env.NODE_ENV === 'production') {
     })
 }
 
-mongoose.connect(process.env.ATLAS_URI, { useUnifiedTopology: true, useNewUrlParser: true })
-    .then(console.log('MongoDB database connected successfully'))
+
 
 app.use(express.json())
 app.use(cors());
