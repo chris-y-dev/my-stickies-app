@@ -18,7 +18,9 @@ if (port == null || port == "") {
 mongoose.connect(process.env.ATLAS_URI, { useUnifiedTopology: true, useNewUrlParser: true })
     .then(console.log('MongoDB database connected successfully'))
 
-
+app.use(express.json())
+app.use(cors());
+app.use('/', routesURL)
 
 //list which files to be used + send build file to browser
 if (process.env.NODE_ENV === 'production') {
@@ -31,9 +33,6 @@ if (process.env.NODE_ENV === 'production') {
     })
 }
 
-app.use(express.json())
-app.use(cors());
-app.use('/', routesURL)
 
 app.listen(port, function(){
     console.log(`server is running on port: ${port}`);
