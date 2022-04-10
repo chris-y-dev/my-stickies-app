@@ -2,11 +2,11 @@ import React from "react";
 
 function Note(props) {
 
-  //Handle the click on delete button
+  //Handle the click on delete button. onDelete = passed over from App
   function handleClick(event){
     props.onDelete(
       {keyId: props.keyId,
-        objId: event.target.value}); //triggers function passed over from App
+        objId: event.target.value}); 
   }
 
   return (

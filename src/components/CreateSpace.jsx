@@ -6,10 +6,8 @@ function CreateSpace(props) {
   //State of input text
   const [inputText, setInputText] = useState({
     title:"", content:"", color:"", _id:""});
-  //???/BUG
 
-  //1. Function that handles change to input areas
-  //store as new object
+  //Function that handles change to input areas & store as new object
   function handleChange(event){
   const {value: newValue, name} = event.target;
   setInputText(prevObj => {
@@ -17,7 +15,7 @@ function CreateSpace(props) {
   });
   }
 
-  console.log(inputText); //test update
+  // console.log(inputText); //test update
 
 
 //Function to pass Title/Content values to <app>
@@ -30,14 +28,11 @@ function submitNote(event){
    //submit data to backend
    axios.post('https://stickies-wall-by-chris.herokuapp.com/note', inputText)
    .then(res => console.log(res.data));
-   //old link http://localhost:4000
-   //https://stickies-wall-by-chris.herokuapp.com/
   
-  //reset Input Space after submitting note
+  //reset Input Space after submitting note. But don't reset color
   setInputText({
     title:"",
     content: "",
-    color: "",
     _id:""
   }); 
 

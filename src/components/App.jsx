@@ -14,15 +14,14 @@ function App() {
   //State for stored array notes
   const [noteArray, setNoteArray] = useState([]);
 
+  //function to retrieve what's previously saved on Mongo
   function retrieveData(){
     fetch("/note")
     .then(res => res.json())
     .then(jsonRes => setNoteArray(jsonRes));
   }
-//original link: http://localhost:4000/note
 
-
-// changed .then function
+  //Loads fetch function when browser loads
   useEffect(retrieveData, []);
 
 
@@ -38,22 +37,20 @@ function App() {
   function deleteNote(ids){
 
     const {keyId, objId} = ids
-    // console.log(id);
     axios.delete('/note/' + objId)
    .then(res => console.log(res.data));
-   //http://localhost:4000/note
-   //https://stickies-wall-by-chris.herokuapp.com
 
    //for local Array
-   setNoteArray(prevArray => {           //Call previous Array and filter according to ID passed over
+  //Call previous Array and filter according to ID passed over
+   setNoteArray(prevArray => {        
     return prevArray.filter(function(noteItem, index){
       return index !== keyId
       })  
   });
+
   //Reset Database array
   setNoteArray(prevArray => {
     return prevArray.filter(function(note){
-      // console.log(note._id);
       return note._id !== objId 
     })
   });
