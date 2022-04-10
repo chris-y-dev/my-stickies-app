@@ -36,9 +36,10 @@ function App() {
 
     const {keyId, objId} = ids
     // console.log(id);
-    axios.delete(`http://localhost:4000/note/${objId}`)
+    axios.delete('http://localhost:4000/note/' + objId)
    .then(res => console.log(res.data));
    //old link http://localhost:4000/
+   //testing post instead of delete
 
    //for local Array
    setNoteArray(prevArray => {           //Call previous Array and filter according to ID passed over

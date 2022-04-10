@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-// const dotenv = require('dotenv');
+const dotenv = require('dotenv');
 const routesURL = require('./routes/routes')
 
 dotenv.config();
