@@ -24,3 +24,5 @@ yarn-error.log*
 
 # react-scripts start node server.js serve -s build
 # react-scripts start && node backend/server.js
+
+# added no unused vars, orrdeides, files, rules, maxlen

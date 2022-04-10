@@ -20,7 +20,7 @@ router.post('/note', (req, res) => {
     })
 })
 
-router.get('/note', (req, res) => {
+router.get('/', (req, res) => {
     Note.find((err, note) => {
         if (err) {
             console.log(err);
