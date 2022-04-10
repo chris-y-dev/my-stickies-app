@@ -44,7 +44,7 @@ function submitNote(event){
  
   //stop form from refreshing
   event.preventDefault();
-}
+  }
 
   return (
     <div>
