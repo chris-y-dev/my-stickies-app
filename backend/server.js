@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('src'));
     app.use(express.static('backend'));
     app.get('/*', (req,res)=>{
-        req.sendFile(path.resolve(__dirname, 'src', 'index.js'))
+        req.sendFile(path.resolve(__dirname, 'public', 'index.html'))
     })
 }
 

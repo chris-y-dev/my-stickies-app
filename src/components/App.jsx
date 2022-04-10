@@ -70,7 +70,7 @@ function App() {
         onAdd={addNote}
       />
       {noteArray.map(function(noteItem, index){
-        return <Note title={noteItem.title} content={noteItem.content} color={noteItem.color} onDelete={deleteNote} key={index} keyId={index} ObjId={noteItem._id}/>
+        return <Note title={noteItem.title} content={noteItem.content} color={noteItem.color} onDelete={deleteNote} key={index} keyId={index} ObjId={noteItem._id} />
       })}
       
       <Footer />
