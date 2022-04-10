@@ -8,7 +8,7 @@ const path = require('path')
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 4000;
+// const port = process.env.PORT || 4000;
 
 mongoose.connect(process.env.ATLAS_URI, { useUnifiedTopology: true, useNewUrlParser: true })
     .then(console.log('MongoDB database connected successfully'))
@@ -25,10 +25,16 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('public'));
     app.use(express.static('src'));
     app.use(express.static('backend'));
-    app.get('*', (req,res)=>{
+    app.get('/*', (req,res)=>{
         req.sendFile(path.resolve(__dirname, 'public', 'index.html'))
     })
 }
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 4000;
+}
+
 
 app.listen(port, function(){
     console.log(`server is running on port: ${port}`);
