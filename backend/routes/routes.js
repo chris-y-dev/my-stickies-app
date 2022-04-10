@@ -30,6 +30,8 @@ router.get('/note', (req, res) => {
     })
 }) //try from * to /note
 
+
+//NOT USED ANYMORE
 // router.post('/delete', (req,res)=>{
 //     console.log(req.body.id);
 //     const id = req.body.id
