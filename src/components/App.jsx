@@ -18,8 +18,6 @@ function App() {
     .then(res => res.json())
     .then(jsonRes => setNoteArray(jsonRes));
   }
-  //http://localhost:4000/note
-  //turn json into text
 
 // changed .then function
   useEffect(retrieveData, []);

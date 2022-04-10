@@ -8,7 +8,8 @@ router.post('/note', (req, res) => {
     const newNote = new Note ({
         title: req.body.title,
         content: req.body.content,
-        color: req.body.color
+        color: req.body.color,
+        _id: req.body._id
     })
     newNote.save()
     .then(data => {

@@ -1,10 +1,11 @@
 import React, {useState} from "react";
 import axios from 'axios';
+const mongoose = require('mongoose')
 
 function CreateSpace(props) {
   //State of input text
   const [inputText, setInputText] = useState({
-    title:"", content:"", color:""});
+    title:"", content:"", color:"", _id:""});
   //???/BUG
 
   //1. Function that handles change to input areas
@@ -21,10 +22,13 @@ function CreateSpace(props) {
 
 //Function to pass Title/Content values to <app>
 function submitNote(event){
+  //assign mongo objID on add (without retrieval)
+  const _id = mongoose.Types.ObjectId();
+  inputText._id = _id;
   props.onAdd(inputText) //calling onAdd === calling addNote function from App.jsx
 
    //submit data to backend
-   axios.post('/note', inputText)
+   axios.post('http://localhost:4000/note', inputText)
    .then(res => console.log(res.data));
    //old link http://localhost:4000
   
@@ -33,6 +37,7 @@ function submitNote(event){
     title:"",
     content: "",
     color: "",
+    _id:""
   }); 
 
  
@@ -51,6 +56,7 @@ function submitNote(event){
           <option value="bluenote">Blue</option>
           <option value="yellownote">Yellow</option>
           </select>
+          <span hidden="hidden" name="_id"value={inputText._id}></span>
         <button onClick={submitNote}>Add</button>
       </form>
     </div>

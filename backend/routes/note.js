@@ -11,12 +11,15 @@ router.post('/', function(req,res){
     const title = req.body.title;
     const content = req.body.content;
     const color = req.body.color;
+    const _id = req.body._id
+    
 
 //new note object
     const newNote = new Note({
         title,
         content,
-        color
+        color,
+        _id
     })
 //save the note
     newNote.save()
