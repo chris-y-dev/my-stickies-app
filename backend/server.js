@@ -24,11 +24,12 @@ app.use('/', routesURL)
 
 
 if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('build'));
     app.use(express.static('public'));
     app.use(express.static('src'));
     app.use(express.static('backend'));
     app.get('*', (req,res)=>{
-        res.sendFile(path.resolve(__dirname, 'src', 'index.js'))
+        res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
     })
 }
 //change served file
