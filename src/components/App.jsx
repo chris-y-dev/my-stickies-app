@@ -40,14 +40,6 @@ function App() {
     axios.delete('/note/' + objId)
    .then(res => console.log(res.data));
 
-   //for local Array
-  //Call previous Array and filter according to ID passed over
-  //  setNoteArray(prevArray => {        
-  //   return prevArray.filter(function(noteItem, index){
-  //     return index !== keyId
-  //     })  
-  // });
-
   //Reset Database array
   setNoteArray(prevArray => {
     return prevArray.filter(function(note){

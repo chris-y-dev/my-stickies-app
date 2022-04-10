@@ -20,23 +20,24 @@ function CreateSpace(props) {
 
 //Function to pass Title/Content values to <app>
 function submitNote(event){
-  //assign mongo objID on add (without retrieval)
+
+  //assign mongo objID on add
   const _id = mongoose.Types.ObjectId();
   inputText._id = _id;
-  props.onAdd(inputText) //calling onAdd === calling addNote function from App.jsx
+  props.onAdd(inputText)
 
    //submit data to backend
-   axios.post('https://stickies-wall-by-chris.herokuapp.com/note', inputText)
-   .then(res => console.log(res.data));
+  axios.post('https://stickies-wall-by-chris.herokuapp.com/note', inputText)
+  .then(res => console.log(res.data));
   
   //reset Input Space after submitting note. But don't reset color
   setInputText({
     title:"",
     content: "",
+    color: inputText.color,
     _id:""
   }); 
 
- 
   //stop form from refreshing
   event.preventDefault();
   }
