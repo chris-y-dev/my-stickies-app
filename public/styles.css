@@ -180,7 +180,15 @@ footer p {
 footer a {
   text-decoration: none;
   color: orangered;
+  margin: 2px;
 }
+
+footer a:hover{
+  color: white;
+  text-decoration: underline;
+}
+
+
 
 @media only screen and (max-width: 600px) {
   form {
