@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer>
       <p>Created by Chris Yuen {year}</p>
-      <p>Social Media: <a href="https://www.linkedin.com/in/chrisyuen976">LinkedIn</a></p>
+      <p><a href="https://www.chrisyuen.info">Portfolio</a> <a href="https://www.linkedin.com/in/chrisyuen976">LinkedIn</a></p>
       <p className="footer-small">Technologies used: React, JavaScript, Node.js, MongoDB</p>
     </footer>
   );

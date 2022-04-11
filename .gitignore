@@ -22,11 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Scraps:
 # react-scripts start node server.js serve -s build
 # react-scripts start && node backend/server.js
 # react-scripts build
-
-
-# added no unused vars, orrdeides, files, rules, maxlen
-
-# react-script starts for local
