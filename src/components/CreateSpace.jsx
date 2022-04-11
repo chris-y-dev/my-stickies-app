@@ -52,6 +52,7 @@ function submitNote(event){
           <option value="rednote">Red</option>
           <option value="bluenote">Blue</option>
           <option value="yellownote">Yellow</option>
+          <option value="greennote">Green</option>
           </select>
           <span hidden="hidden" name="_id"value={inputText._id}></span>
         <button onClick={submitNote}>Add</button>

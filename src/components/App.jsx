@@ -7,6 +7,7 @@ import React, {useEffect, useState} from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
+import Instructions from "./Instructions";
 import CreateSpace from "./CreateSpace";
 import axios from 'axios';
 
@@ -40,6 +41,14 @@ function App() {
     axios.delete('/note/' + objId)
    .then(res => console.log(res.data));
 
+   //for local Array
+  //Call previous Array and filter according to ID passed over
+   setNoteArray(prevArray => {        
+    return prevArray.filter(function(noteItem, index){
+      return index !== keyId
+      })  
+  });
+
   //Reset Database array
   setNoteArray(prevArray => {
     return prevArray.filter(function(note){
@@ -56,12 +65,18 @@ function App() {
   return (
     <div>
       <Header />
+      <div className="appBody">
+      <Instructions />
       <CreateSpace 
         onAdd={addNote}
       />
-      {noteArray.map(function(noteItem, index){
-        return <Note title={noteItem.title} content={noteItem.content} color={noteItem.color} onDelete={deleteNote} key={index} keyId={index} ObjId={noteItem._id} />
-      })}
+        <div className="noteContainer">
+          
+        {noteArray.map(function(noteItem, index){
+          return <Note title={noteItem.title} content={noteItem.content} color={noteItem.color} onDelete={deleteNote} key={index} keyId={index} ObjId={noteItem._id} />
+        })}
+        </div>
+      </div>
       
       <Footer />
     </div>

@@ -28,3 +28,5 @@ yarn-error.log*
 
 
 # added no unused vars, orrdeides, files, rules, maxlen
+
+# react-script starts for local
